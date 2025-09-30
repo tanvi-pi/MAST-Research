@@ -9,7 +9,7 @@ from collections import Counter
 
 
 import os
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "API_KEY"
 
 
 llm = ChatOpenAI(model_name="gpt-4o", temperature=0)
