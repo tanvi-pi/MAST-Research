@@ -162,23 +162,57 @@ class RouterModule:
     
         examples = self.router_pool.get_relevant_experiences(task, self.agent_id, self.retrieval_num)
 
+        # include recent memory context (best-effort)
+        memory_ctx = ""
+        try:
+            if hasattr(self, "memory_manager") and self.memory_manager:
+                # optionally trigger summarization to keep context small (best-effort)
+                try:
+                    self.memory_manager.summarize_if_needed(self.agent_id)
+                except Exception:
+                    # summarization is optional; ignore failures
+                    pass
+
+                hist = []
+                try:
+                    hist = self.memory_manager.get_history(self.agent_id) or []
+                except Exception:
+                    hist = []
+
+                if hist:
+                    recent = hist[-10:]  # last N entries
+                    import json as _json
+                    lines = []
+                    for m in recent:
+                        role = m.get("role") or "role"
+                        content = m.get("content")
+                        if isinstance(content, (dict, list)):
+                            content_str = _json.dumps(content, ensure_ascii=False)
+                        else:
+                            content_str = str(content)
+                        lines.append(f"{role}: {content_str}")
+                    memory_ctx = "\nRecent memory (latest first):\n" + "\n".join(lines)
+        except Exception:
+            logger.exception("Failed to fetch/include memory context (ignored).")
+ 
         query_prompt = self.router_make_prompt_for_next_agent_id(
-            experiences=examples,
-            task=task,
-            prompt_template=ROUTER_PROMPT_DECIDE_NEXT_AGENT_ID_FORMAT,
-            self_info=self_info,
-            neighbors_info=neighbors_info,
-            constraints=constraints
-            )
-
-        
+             experiences=examples,
+             task=task,
+             prompt_template=ROUTER_PROMPT_DECIDE_NEXT_AGENT_ID_FORMAT,
+             self_info=self_info,
+             neighbors_info=neighbors_info,
+             constraints=constraints
+             )
+ 
+        if memory_ctx:
+            query_prompt = f"{query_prompt}\n\n# MemoryContextStart\n{memory_ctx}\n# MemoryContextEnd\n"
+ 
         logger.info(f"query_prompt for router_decide_next_agent_id: {query_prompt}")
-
+ 
         response = self.get_llm_response(
-            system_prompt=ROUTER_DECIDE_NEXT_AGENT_ID_SYSTEM_PROMPT,
-            query_prompt=query_prompt
-            )
-        
+             system_prompt=ROUTER_DECIDE_NEXT_AGENT_ID_SYSTEM_PROMPT,
+             query_prompt=query_prompt
+             )
         
         # response_dict = parse_decision_text(response)
         response_dict = extract_content_as_dict(long_string=response, short_strings=["DECISION", "REASON", "NEXT_AGENT_ID"])
@@ -205,7 +239,7 @@ class RouterModule:
                         else:
                             next_agent_id = self.find_best_alternative_agent(task, neighbors_info)
                     else:
-                        next_agent_id = self.find_best_alternative_agent(task, neighbors_info)
+                        next_agent_id = self.find_best_alternative_agent(task)
 
             except ValueError:
                 next_agent_id = self.find_best_alternative_agent(task)
@@ -425,6 +459,13 @@ class RouterModule:
             agent_info=agent_info
             )
         
+        # append Agent metadata (credit) so the LLM knows its rating
+        try:
+            credit = float(getattr(self, "_credit", 0.0))
+            query_prompt = f"{query_prompt}\n\n# AgentMetaStart\nAgentMeta: credit={credit:.3f}\n# AgentMetaEnd\n"
+        except Exception:
+            logger.exception("Failed to attach AgentMeta to prompt (ignored).")
+ 
         return query_prompt
 
 
@@ -935,3 +976,17 @@ class Agent:
     def decay_abilities(self, task_type) -> None:
         for ability_type in task_to_ability_map[task_type]:
             self.abilities[ability_type] = max(0.1, self.abilities[ability_type] * (1 - self.decay_rate))
+
+
+    def apply_credit(self, delta: float):
+        """
+        Apply a small scalar credit/bonus to this agent (keeps run-time state).
+        This is intentionally lightweight: use this to record small incentives (clarification bonuses).
+        """
+        try:
+            crt = getattr(self, "_credit", 0.0)
+            crt += float(delta)
+            setattr(self, "_credit", crt)
+            logger.info(f"Applied credit {delta:.3f} to agent {self.agent_id}; total_credit={crt:.3f}")
+        except Exception:
+            logger.exception("Failed to apply credit to agent (ignored).")

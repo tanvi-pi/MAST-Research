@@ -81,6 +81,36 @@ class Experiment:
         self.thought_constraints = thought_constraints
         self.split_constraints = split_constraints
         self.agent_graph = self.initilize_agent_graph(agent_config, agent_graph_config)
+        # attach memory manager to agent-graph / agents so agents can read/write memory
+        try:
+            if self.memory_manager:
+                # preferred API on AgentGraph
+                if hasattr(self.agent_graph, "set_memory_manager"):
+                    try:
+                        self.agent_graph.set_memory_manager(self.memory_manager)
+                    except Exception:
+                        logger.exception("agent_graph.set_memory_manager failed (ignored).")
+                # best-effort: assign memory_manager to any agent objects
+                try:
+                    # try common accessors
+                    agent_list = None
+                    if hasattr(self.agent_graph, "get_all_agents"):
+                        agent_list = self.agent_graph.get_all_agents()
+                    elif hasattr(self.agent_graph, "agents"):
+                        agent_list = getattr(self.agent_graph, "agents")
+                    elif hasattr(self.agent_graph, "nodes"):
+                        agent_list = getattr(self.agent_graph, "nodes")
+                    if agent_list:
+                        for a in list(agent_list):
+                            try:
+                                setattr(a, "memory_manager", self.memory_manager)
+                            except Exception:
+                                # ignore single-agent failures
+                                pass
+                except Exception:
+                    logger.exception("Failed to attach memory_manager onto agents (ignored).")
+        except Exception:
+            logger.exception("Failed to wire memory manager into agent graph (ignored).")
         self.task_history = {}
         self.json_file_path_memory = json_file_path_memory
         if self.json_file_path_memory:
@@ -417,6 +447,75 @@ class Experiment:
         save_json(self.agent_experiences_record, self.json_file_path_experience)
 
 
+        try:
+            # --- Clarification-based credit assignment (minimal, best-effort) ---
+            try:
+                reward_delta = 0.0
+                clarification_agents = set()
+                if getattr(self, "memory_manager", None):
+                    # memory_manager.data expected to be dict(agent_id -> [entries])
+                    with getattr(self.memory_manager, "lock", DummyContextManager()) if hasattr(self.memory_manager, "lock") else DummyContextManager():
+                        mem_data = getattr(self.memory_manager, "data", {}) or {}
+                        for aid, entries in mem_data.items():
+                            for e in entries:
+                                role = e.get("role") if isinstance(e, dict) else None
+                                content = e.get("content") if isinstance(e, dict) else {}
+                                # content can be dict with task_chain_id
+                                tcid = None
+                                if isinstance(content, dict):
+                                    tcid = content.get("task_chain_id")
+                                # accept either numeric or string equality
+                                if role == "clarification_request" and tcid is not None and str(tcid) == str(task_chain.task_chain_id):
+                                    clarification_agents.add(str(aid))
+                # simple rule: if clarification(s) happened and task succeeded -> small positive reward
+                if clarification_agents and success:
+                    reward_delta = 0.05
+                # if no clarification and task failed -> small negative penalty to primary agent (optional)
+                elif (not clarification_agents) and (not success):
+                    reward_delta = -0.05
+
+                if reward_delta != 0.0:
+                    # apply to agents who asked clarification (or to primary agent on penalty)
+                    for aid in (clarification_agents if clarification_agents else {str(task_chain.last_router_agent_id or task_chain.router_agent_id or "")}):
+                        if not aid:
+                            continue
+                        agent_obj = None
+                        try:
+                            # best-effort lookup: AgentGraph API or attribute access
+                            if hasattr(self, "agent_graph"):
+                                ag = self.agent_graph
+                                if hasattr(ag, "get_agent"):
+                                    agent_obj = ag.get_agent(int(aid))
+                                elif hasattr(ag, "agents"):
+                                    for a in getattr(ag, "agents"):
+                                        if getattr(a, "agent_id", None) == int(aid):
+                                            agent_obj = a
+                                            break
+                                elif hasattr(ag, "nodes"):
+                                    for a in getattr(ag, "nodes"):
+                                        if getattr(a, "agent_id", None) == int(aid):
+                                            agent_obj = a
+                                            break
+                        except Exception:
+                            agent_obj = None
+
+                        if agent_obj is not None:
+                            try:
+                                # prefer a small API call on Agent
+                                if hasattr(agent_obj, "apply_credit"):
+                                    agent_obj.apply_credit(reward_delta)
+                                else:
+                                    # fallback: log and stash as attribute
+                                    cur = getattr(agent_obj, "_credit", 0.0)
+                                    setattr(agent_obj, "_credit", cur + reward_delta)
+                                    logger.info(f"Fallback credit applied to agent {aid}: {reward_delta}")
+                            except Exception:
+                                logger.exception("Failed to apply reward delta to agent (ignored).")
+            except Exception:
+                logger.exception("Clarification-based credit assignment failed (ignored).")
+        except Exception:
+            # keep outer error handling intact
+            logger.exception("Error in update_agent_graph clarification block (ignored).")
         return 0
 
 
