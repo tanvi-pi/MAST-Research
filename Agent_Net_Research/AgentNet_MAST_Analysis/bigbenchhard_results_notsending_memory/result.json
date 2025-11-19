@@ -1,0 +1,802 @@
+[
+    {
+        "task_chain_id": 0,
+        "raw_result": " no",
+        "final_result": " no",
+        "correct_answer": "No",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 1,
+        "raw_result": " (A)",
+        "final_result": " (A)",
+        "correct_answer": "(A)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 2,
+        "raw_result": " no",
+        "final_result": " no",
+        "correct_answer": "No",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 3,
+        "raw_result": " invalid",
+        "final_result": " invalid",
+        "correct_answer": "invalid",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 4,
+        "raw_result": " (B)",
+        "final_result": " (B)",
+        "correct_answer": "(B)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 5,
+        "raw_result": " (A)",
+        "final_result": " (A)",
+        "correct_answer": "(A)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 6,
+        "raw_result": " (D)",
+        "final_result": " (D)",
+        "correct_answer": "(D)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 7,
+        "raw_result": " yes",
+        "final_result": " yes",
+        "correct_answer": "Yes",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 8,
+        "raw_result": " no",
+        "final_result": " no",
+        "correct_answer": "No",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 9,
+        "raw_result": " (A)",
+        "final_result": " (A)",
+        "correct_answer": "(B)",
+        "success": false,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 10,
+        "raw_result": " (A)",
+        "final_result": " (A)",
+        "correct_answer": "(A)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 11,
+        "raw_result": " (I)",
+        "final_result": " (I)",
+        "correct_answer": "(I)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 12,
+        "raw_result": " valid",
+        "final_result": " valid",
+        "correct_answer": "valid",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 13,
+        "raw_result": " no",
+        "final_result": " no",
+        "correct_answer": "No",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 14,
+        "raw_result": " (A)",
+        "final_result": " (A)",
+        "correct_answer": "(C)",
+        "success": false,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 15,
+        "raw_result": " (A)",
+        "final_result": " (A)",
+        "correct_answer": "(A)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 16,
+        "raw_result": " (B)",
+        "final_result": " (B)",
+        "correct_answer": "(B)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 17,
+        "raw_result": " no",
+        "final_result": " no",
+        "correct_answer": "No",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 18,
+        "raw_result": " no",
+        "final_result": " no",
+        "correct_answer": "No",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 19,
+        "raw_result": " yes",
+        "final_result": " yes",
+        "correct_answer": "Yes",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 20,
+        "raw_result": " (A)",
+        "final_result": " (A)",
+        "correct_answer": "(A)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 21,
+        "raw_result": " (A)",
+        "final_result": " (A)",
+        "correct_answer": "(A)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 22,
+        "raw_result": " (G)",
+        "final_result": " (G)",
+        "correct_answer": "(G)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 23,
+        "raw_result": " (E)",
+        "final_result": " (E)",
+        "correct_answer": "(F)",
+        "success": false,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 24,
+        "raw_result": " (D)",
+        "final_result": " (D)",
+        "correct_answer": "(B)",
+        "success": false,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 25,
+        "raw_result": " (D)",
+        "final_result": " (D)",
+        "correct_answer": "(D)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 26,
+        "raw_result": " (D)",
+        "final_result": " (D)",
+        "correct_answer": "(D)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 27,
+        "raw_result": " (D)",
+        "final_result": " (D)",
+        "correct_answer": "(D)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 28,
+        "raw_result": " (F)",
+        "final_result": " (F)",
+        "correct_answer": "(F)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 29,
+        "raw_result": " (E)",
+        "final_result": " (E)",
+        "correct_answer": "(E)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 30,
+        "raw_result": " (B)",
+        "final_result": " (B)",
+        "correct_answer": "(B)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 31,
+        "raw_result": " (B)",
+        "final_result": " (B)",
+        "correct_answer": "(B)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 32,
+        "raw_result": " (A)",
+        "final_result": " (A)",
+        "correct_answer": "(A)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 33,
+        "raw_result": " (C)",
+        "final_result": " (C)",
+        "correct_answer": "(C)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 34,
+        "raw_result": " (D)",
+        "final_result": " (D)",
+        "correct_answer": "(D)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 35,
+        "raw_result": " (A)",
+        "final_result": " (A)",
+        "correct_answer": "(A)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 36,
+        "raw_result": " (F)",
+        "final_result": " (F)",
+        "correct_answer": "(F)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 37,
+        "raw_result": " (C)",
+        "final_result": " (C)",
+        "correct_answer": "(C)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 38,
+        "raw_result": " (B)",
+        "final_result": " (B)",
+        "correct_answer": "(B)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 39,
+        "raw_result": " (B)",
+        "final_result": " (B)",
+        "correct_answer": "(B)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 40,
+        "raw_result": " (J)",
+        "final_result": " (J)",
+        "correct_answer": "(J)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 41,
+        "raw_result": " (F)",
+        "final_result": " (F)",
+        "correct_answer": "(F)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 42,
+        "raw_result": " (A)",
+        "final_result": " (A)",
+        "correct_answer": "(A)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 43,
+        "raw_result": " (B)",
+        "final_result": " (B)",
+        "correct_answer": "(B)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 44,
+        "raw_result": " (A)",
+        "final_result": " (A)",
+        "correct_answer": "(B)",
+        "success": false,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 45,
+        "raw_result": " (D)",
+        "final_result": " (D)",
+        "correct_answer": "(D)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 46,
+        "raw_result": " (A)",
+        "final_result": " (A)",
+        "correct_answer": "(C)",
+        "success": false,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 47,
+        "raw_result": " (B)",
+        "final_result": " (B)",
+        "correct_answer": "(B)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 48,
+        "raw_result": " no",
+        "final_result": " no",
+        "correct_answer": "No",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 49,
+        "raw_result": " (D)",
+        "final_result": " (D)",
+        "correct_answer": "(K)",
+        "success": false,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 50,
+        "raw_result": " (C)",
+        "final_result": " (C)",
+        "correct_answer": "(C)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 51,
+        "raw_result": " (C)",
+        "final_result": " (C)",
+        "correct_answer": "(C)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 52,
+        "raw_result": " (E)",
+        "final_result": " (E)",
+        "correct_answer": "(E)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 53,
+        "raw_result": " (E)",
+        "final_result": " (E)",
+        "correct_answer": "(E)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 54,
+        "raw_result": " valid",
+        "final_result": " valid",
+        "correct_answer": "valid",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 55,
+        "raw_result": " (C)",
+        "final_result": " (C)",
+        "correct_answer": "(B)",
+        "success": false,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 56,
+        "raw_result": " (C)",
+        "final_result": " (C)",
+        "correct_answer": "(C)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 57,
+        "raw_result": " (C)",
+        "final_result": " (C)",
+        "correct_answer": "(C)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 58,
+        "raw_result": " (D)",
+        "final_result": " (D)",
+        "correct_answer": "(G)",
+        "success": false,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 59,
+        "raw_result": " (B)",
+        "final_result": " (B)",
+        "correct_answer": "(B)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 60,
+        "raw_result": " (A)",
+        "final_result": " (A)",
+        "correct_answer": "(A)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 61,
+        "raw_result": " (A)",
+        "final_result": " (A)",
+        "correct_answer": "(A)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 62,
+        "raw_result": " invalid",
+        "final_result": " invalid",
+        "correct_answer": "invalid",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 63,
+        "raw_result": " (C)",
+        "final_result": " (C)",
+        "correct_answer": "(C)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 64,
+        "raw_result": " (B)",
+        "final_result": " (B)",
+        "correct_answer": "(B)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 65,
+        "raw_result": " (B)",
+        "final_result": " (B)",
+        "correct_answer": "(B)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 66,
+        "raw_result": " (D)",
+        "final_result": " (D)",
+        "correct_answer": "(D)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 67,
+        "raw_result": " (A)",
+        "final_result": " (A)",
+        "correct_answer": "(A)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 68,
+        "raw_result": " (A)",
+        "final_result": " (A)",
+        "correct_answer": "(A)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 69,
+        "raw_result": " (B)",
+        "final_result": " (B)",
+        "correct_answer": "(B)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 70,
+        "raw_result": " (F)",
+        "final_result": " (F)",
+        "correct_answer": "(F)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 71,
+        "raw_result": " (E)",
+        "final_result": " (E)",
+        "correct_answer": "(E)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 72,
+        "raw_result": " (A)",
+        "final_result": " (A)",
+        "correct_answer": "(A)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 73,
+        "raw_result": " (J)",
+        "final_result": " (J)",
+        "correct_answer": "(J)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 74,
+        "raw_result": " (A)",
+        "final_result": " (A)",
+        "correct_answer": "(A)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 75,
+        "raw_result": " (A)",
+        "final_result": " (A)",
+        "correct_answer": "(A)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 76,
+        "raw_result": " (C)",
+        "final_result": " (C)",
+        "correct_answer": "(C)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 77,
+        "raw_result": " (B)",
+        "final_result": " (B)",
+        "correct_answer": "(B)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 78,
+        "raw_result": " (C)",
+        "final_result": " (C)",
+        "correct_answer": "(C)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 79,
+        "raw_result": " (A)",
+        "final_result": " (A)",
+        "correct_answer": "(A)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 80,
+        "raw_result": " (R)",
+        "final_result": " (R)",
+        "correct_answer": "(R)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 81,
+        "raw_result": " (D)",
+        "final_result": " (D)",
+        "correct_answer": "(D)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 82,
+        "raw_result": " (B)",
+        "final_result": " (B)",
+        "correct_answer": "(B)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 83,
+        "raw_result": " (E)",
+        "final_result": " (E)",
+        "correct_answer": "(E)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 84,
+        "raw_result": " (B)",
+        "final_result": " (B)",
+        "correct_answer": "(B)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 85,
+        "raw_result": " (B)",
+        "final_result": " (B)",
+        "correct_answer": "(B)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 86,
+        "raw_result": " valid",
+        "final_result": " valid",
+        "correct_answer": "invalid",
+        "success": false,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 87,
+        "raw_result": " (F)",
+        "final_result": " (F)",
+        "correct_answer": "(A)",
+        "success": false,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 88,
+        "raw_result": " no",
+        "final_result": " no",
+        "correct_answer": "No",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 89,
+        "raw_result": " (F)",
+        "final_result": " (F)",
+        "correct_answer": "(A)",
+        "success": false,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 90,
+        "raw_result": " (A)",
+        "final_result": " (A)",
+        "correct_answer": "(A)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 91,
+        "raw_result": " (B)",
+        "final_result": " (B)",
+        "correct_answer": "(A)",
+        "success": false,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 92,
+        "raw_result": " (A)",
+        "final_result": " (A)",
+        "correct_answer": "(F)",
+        "success": false,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 93,
+        "raw_result": " (E)",
+        "final_result": " (E)",
+        "correct_answer": "(E)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 94,
+        "raw_result": " (C)",
+        "final_result": " (C)",
+        "correct_answer": "(C)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 95,
+        "raw_result": " (E)",
+        "final_result": " (E)",
+        "correct_answer": "(E)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 96,
+        "raw_result": " (C)",
+        "final_result": " (C)",
+        "correct_answer": "(C)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 97,
+        "raw_result": " (A)",
+        "final_result": " (A)",
+        "correct_answer": "(D)",
+        "success": false,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 98,
+        "raw_result": " (A)",
+        "final_result": " (A)",
+        "correct_answer": "(A)",
+        "success": true,
+        "total_accuracy": 0
+    },
+    {
+        "task_chain_id": 99,
+        "raw_result": " (B)",
+        "final_result": " (B)",
+        "correct_answer": "(B)",
+        "success": true,
+        "total_accuracy": 0
+    }
+]
